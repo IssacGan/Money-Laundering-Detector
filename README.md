@@ -4,7 +4,7 @@ This Codebase is to prove the hypothesis that a solution powered by Machine Lear
 -> reduce review operations cost by lowering the number of False Positive alerts 
 without using current framework of static rule based alert generation process
 
-#Steps to run the Code
+# Steps to run the Code
 1. Download the Golden Dataset from -> https://www.kaggle.com/ntnu-testimon/paysim1/data
 2. Filter the Golden Dataset and scale down to only few entities [unique nameOrig and nameDest] with more than 40 transaction records for each entity.
 Code -> machine-learning-layer/src/data_engineering/filteredDataGenerator.py
@@ -28,7 +28,7 @@ Code -> src/fraudulent_transaction_classifier/svmClassifier.py ; src/fraudulent_
 Trained Model -> models/tree_classifier_model.dat
 
 
-The attributes in the datasets are described below: 
+# The attributes in the datasets are described below: 
 1. Golden Data Source - Paysim1 [PS_20174392719_1491204439457_log.csv]:
 step -> Day when the transaction happened [Assume 01/01/2017 as Day 0, then step=5 indicates the transaction was carried out on 05/01/2017]
 type -> Indicates the Type of Transaction
