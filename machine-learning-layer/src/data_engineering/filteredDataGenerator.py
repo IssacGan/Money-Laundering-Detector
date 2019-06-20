@@ -20,7 +20,7 @@ nameDestCol = 6
 nameOrig = []
 nameDest = []
 nameCount = {}
-
+  
 namesWithMoreThanOneOccurrence = []
 
 

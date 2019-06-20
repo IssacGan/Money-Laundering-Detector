@@ -19,30 +19,32 @@ data_path = "./../../datasets/dataset_primary_segmented.csv"
 dataMat = pandas.read_csv(data_path, sep=",", header=0)
 data = dataMat.values
 
-# def writeArrayToCsv(arr,file):
-#	with open(file, "w") as f:
-#	    writer = csv.writer(f)
-#	    writer.writerows(arr)
-#
-#	#this is to remove the newlines
-#	with open(file, "r") as f:
-#		lines = f.readlines()
-#		lines = [line for i,line in enumerate(lines) if i%2==0]
-#
-#	with open(file,"w") as f:
-#		header = "step,trans_type,amount,nameOrig,oldbalanceOrg,nameDest,oldbalanceDest,accountType,isFraud,isFlaggedFraud"
-#		f.write(header + "\n" + "".join(lines))
-#
+
+def writeArrayToCsv(arr, file):
+    with open(file, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(arr)
+
+    # this is to remove the newlines
+    with open(file, "r") as f:
+        lines = f.readlines()
+        lines = [line for i, line in enumerate(lines) if i % 2 == 0]
+
+    with open(file, "w") as f:
+        header = "step,trans_type,amount,nameOrig,oldbalanceOrg,nameDest,oldbalanceDest,accountType,isFraud,isFlaggedFraud"
+        f.write(header + "\n" + "".join(lines))
+
+
 # segData = {}
 # for i in range(data.shape[0]):
-#	segment = "segment_" + str(data[i,0])
-#	if segData.get(segment,-1) == -1:
-#		segData[segment] = []
-#	segData[segment].append(data[i,1:])
+#     segment = "segment_" + str(data[i, 0])
+#     if segData.get(segment, -1) == -1:
+#         segData[segment] = []
+#     segData[segment].append(data[i, 1:])
 #
 # for segment, data in segData.items():
-#	file = "./../../datasets/segments/"+segment+".csv"
-#	writeArrayToCsv(data,file)
+#     file = "./../../datasets/segments/" + segment + ".csv"
+#     writeArrayToCsv(data, file)
 
 for (dirpath, dirnames, filenames) in walk("./../../datasets/segments"):
     for filenum, file in enumerate(filenames):
